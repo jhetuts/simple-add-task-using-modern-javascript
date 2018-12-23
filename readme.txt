@@ -10,3 +10,6 @@ Description:
 
 Purpose:
     This is just to test my so far knowledge in creating web application using pure Javascript.
+
+
+Visit https://jhetuts.github.io/simple-add-task-using-modern-javascript/
