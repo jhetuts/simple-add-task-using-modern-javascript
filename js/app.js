@@ -60,26 +60,23 @@ function addTaskNow(e){
             tasks.push(inputTask.value);
             addTask(tasks);
         } else {
-            alert('Input task');
+            alert("Oops! You forgot to input a task!");
         }
         inputTask.value = "";
-    }
-    
-    if (inputTask.value == ""){
-        alert('Input task');
     }
 }
 function checkTask(id){
     if(id > -1){
-        tasksDone.push(tasks[id]);
-        tasks.splice(id,1);
-        doneTask(tasksDone);
-        addTask(tasks);
+        setTimeout(function(){
+            tasksDone.push(tasks[id]);
+            tasks.splice(id,1);
+            doneTask(tasksDone);
+            addTask(tasks);
+        }, 500)
     }
 }
 
 inputTask.addEventListener('keypress', addTaskNow);
-btnTask.addEventListener('keypress', addTaskNow);
 
 addTask(tasks);
 doneTask(tasksDone);
@@ -90,9 +87,12 @@ function checkboxLoader(){
 
     for(let count = 0; count < checkbox.length; count++){
         checkbox[count].addEventListener('change', function(){
-            if(this.checked){
-                let id = this.dataset.id;
-                checkTask(id);
+            let answer = confirm("Wait, are you ok with this?");
+            if(answer){
+                if(this.checked){
+                    let id = this.dataset.id;
+                    checkTask(id);       
+                }
             } 
         });
     }
@@ -101,13 +101,14 @@ function removeDoneTasks(){
     let rmvBtn = document.getElementsByClassName('remove-item');
     rmvBtn = Array.from(rmvBtn);
 
-    console.log(rmvBtn);
-
     for(let count = 0; count < rmvBtn.length; count++){
         rmvBtn[count].addEventListener('click', function(){
-            let id = this.dataset.id;
-            tasksDone.splice(id, 1);
-            doneTask(tasksDone);
+            let answer = confirm("Remove this task?");
+            if(answer){
+                let id = this.dataset.id;
+                tasksDone.splice(id, 1);
+                doneTask(tasksDone);
+            }
         });
     }
 }

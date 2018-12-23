@@ -36,8 +36,20 @@ li.ui-state-default:last-child{
 #done-items li:last-child{
     border-bottom:none;
 }
-#addTask{
-    margin-top:10px;
+#input-task{
+    transform: -webkit-transition 1s;
+    transform: transition 0.5s;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #ccc;
+}
+#input-task:focus{
+    transform: scale(1.02);
+    border-bottom: 2px solid #000;
+    box-shadow: none;
+    border-radius: 2px;
+    transform: -webkit-transition 0.5s;
+    transform: transition 0.5s;
 }
 .task-input{
     border: 0;
