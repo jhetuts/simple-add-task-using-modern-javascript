@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Add-task Application Using Modern JavaScript - Javascript</title>
+    <meta name="description" content="Simple Add-task Application Using Modern JavaScript - Javascript. With sample read only data.">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="body"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="todolist not-done">
+                 <h1>Todos</h1>
+                    <input id="input-task" type="text" class="form-control add-todo" placeholder="Add todo">
+                    <button id="addTask" class="btn btn-info">Add Task</button>
+                    <hr>
+                    <ul id="sortable" class="list-unstyled"></ul>
+                    <div class="todo-footer">
+                        <strong><span class="count-todos"></span></strong> Items Left
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="todolist">
+                 <h2>Already Done</h2>
+                    <ul id="done-items" class="list-unstyled">
+                        <!-- <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li> -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
