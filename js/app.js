@@ -30,7 +30,6 @@ function addTask(tasks){
                 </div>
             </li>`;
     }
-    
     tasksWrap.innerHTML = li;
     countTask.innerHTML = document.querySelectorAll("ul#sortable li").length;
 
@@ -52,6 +51,7 @@ function doneTask(taskdone){
     }
     
     doneTasksWrap.innerHTML = li;
+
     removeDoneTasks();
 }
 function addTaskNow(e){
@@ -64,6 +64,10 @@ function addTaskNow(e){
         }
         inputTask.value = "";
     }
+    
+    if (inputTask.value == ""){
+        alert('Input task');
+    }
 }
 function checkTask(id){
     if(id > -1){
@@ -72,8 +76,13 @@ function checkTask(id){
         doneTask(tasksDone);
         addTask(tasks);
     }
-    checkboxLoader();
 }
+
+inputTask.addEventListener('keypress', addTaskNow);
+btnTask.addEventListener('keypress', addTaskNow);
+
+addTask(tasks);
+doneTask(tasksDone);
 
 function checkboxLoader(){
     let checkbox = document.getElementsByClassName('check-item');
@@ -103,8 +112,5 @@ function removeDoneTasks(){
     }
 }
 
-inputTask.addEventListener('keypress', addTaskNow);
-btnTask.addEventListener('keypress', addTaskNow);
 
-addTask(tasks);
-doneTask(tasksDone);
+
