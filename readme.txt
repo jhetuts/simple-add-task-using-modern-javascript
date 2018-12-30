@@ -1,4 +1,4 @@
-Simple Add-task Application Using Modern JavaScript
+# Simple Add-task Application Using Modern JavaScript
 ===================================================
 Version: 1.0
 Publisher: jhetuts
